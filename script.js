@@ -1,14 +1,3 @@
-// Create an array to store qeuestions and answers
-// Populate questions and answers array
-// Create a variable to store the score
-// Create an eventlister to go to next questions
-// Create a button for the next questions
-// Create a variable to track Time
-// Create var to store user input
-// Create a function to evaluate the user's input
-// Create a function to call next questions
-// Create a function to check the answer of the answer provided & update points on this basis
-// Save to local storage
 var score = 0;
 const question_item = document.getElementById("question_item");
 const trueButton = document.getElementById("true-btn");
@@ -17,10 +6,6 @@ const responseArea = document.createElement("div");
 let response = document.createElement("h4");
 let countDown = document.getElementById("count-down");
 let questionNumber = document.getElementById("quiz-details")
-// const userName = document.getElementById("username");// Score stuff from here on in
-// const saveScore = document.getElementById("saveScoreBtn");
-// const finalscoreDiv = document.getElementById("final-score");
-
 
 let current_question = {};
 let counter = 0;
@@ -94,8 +79,6 @@ function nextQuestion(){
         localStorage.setItem("finalScore", score);
         alert("Game Over. You have answered all questions")        
         return window.location.assign("endgame.html");
-        //endgame()
-
     }
 }
 
@@ -109,8 +92,7 @@ function startTimer(){
             localStorage.setItem("finalScore", score);
             alert("Times up!");
             clearInterval(quizTimer);
-            return window.location.assign("endgame.html");
-            //endgame()            
+            return window.location.assign("endgame.html");                       
         }
         else{
             time_left--;
@@ -171,32 +153,7 @@ falseButton.addEventListener("click", function(){
 
 })
 
-// function endgame(){
-//     items = document.getElementsByClassName("item")
-//     items.style.display ="none";
 
-//     //finalscoreDiv.style.display = "block";
-
-//     saveUserScore()
-// }
-
-// function saveUserScore(){
-//     // to save to local storage
-//     saveHighScore = e => {
-//         console.log("Works - maybe??");
-//         e.preventDefault();    
-        
-//         let userscore = {
-//             name: userName.value, 
-//             finalscore: score            
-//         };
-
-//         let userscore_serialized = JSON.stringify(userscore)
-//         localStorage.setItem("User_Score", userscore_serialized)        
-//         console.log(userscore)
-//     }
-// }
-    
 
 
     

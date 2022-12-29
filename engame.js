@@ -19,9 +19,9 @@ function saveUserScore(){
         let name = userName.value;
         console.log(name);
 
-        // let userscore_serialized = JSON.stringify(userscore)
+
         localStorage.setItem(name, gameScore)        
-        // console.log(userscore)
+
     }
 
 }
