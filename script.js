@@ -16,6 +16,7 @@ const falseButton = document.getElementById("false-btn")
 const responseArea = document.createElement("div");
 let response = document.createElement("h4");
 let countDown = document.getElementById("count-down");
+let questionNumber = document.getElementById("quiz-details")
 // const userName = document.getElementById("username");// Score stuff from here on in
 // const saveScore = document.getElementById("saveScoreBtn");
 // const finalscoreDiv = document.getElementById("final-score");
@@ -80,6 +81,7 @@ function nextQuestion(){
     if (counter < questions.length){
         console.log("counter is "+ counter + "question.lenght is  " + questions.length);
         //console.log(questions);
+        questionNumber.innerHTML = "Question number: "+ (counter+1);
         current_question = questions[counter];
         //console.log(current_question);
         question_item.innerHTML = current_question.text;       
@@ -89,7 +91,8 @@ function nextQuestion(){
     else{
         // clearInterval(quizTimer);
         
-        alert("Game Over "+counter)
+        localStorage.setItem("finalScore", score);
+        alert("Game Over "+ counter)        
         return window.location.assign("endgame.html");
         //endgame()
 
@@ -103,8 +106,10 @@ function startTimer(){
     
     let quizTimer = setInterval(function(){
         if(time_left <= 0){
+            localStorage.setItem("finalScore", score);
             alert("Times up!");
             clearInterval(quizTimer);
+            return window.location.assign("endgame.html");
             //endgame()            
         }
         else{
@@ -122,7 +127,7 @@ trueButton.addEventListener("click", function(){
     
   
     if (current_question.answer == "True"){
-        score ++;
+        score +=10;
         response.textContent = "That is correct! you have " +score+" points"
         console.log(response);
         responseArea.appendChild(response);
@@ -146,7 +151,7 @@ falseButton.addEventListener("click", function(){
     console.log("works")    
   
     if (current_question.answer == "False"){
-        score ++;
+        score +=10;
         response.textContent = "That is correct! you have " +score+" points"
         console.log(response);
         responseArea.appendChild(response);
