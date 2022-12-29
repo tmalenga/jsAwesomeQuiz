@@ -3,7 +3,7 @@ const saveScore = document.getElementById("saveScoreBtn");
 const finalscoreDiv = document.getElementById("final-score");
 const score = document.getElementById("score");
 const gameScore = localStorage.getItem('finalScore');
-score.innerText = gameScore;
+score.innerText = "Your score is: " + gameScore;
 
 
 function saveUserScore(){

@@ -92,7 +92,7 @@ function nextQuestion(){
         // clearInterval(quizTimer);
         
         localStorage.setItem("finalScore", score);
-        alert("Game Over "+ counter)        
+        alert("Game Over. You have answered all questions")        
         return window.location.assign("endgame.html");
         //endgame()
 
