@@ -1,20 +1,10 @@
-const userName = document.getElementById("username");// Score stuff from here on in
+const userName = document.getElementById("username");
 const saveScore = document.getElementById("saveScoreBtn");
 const finalscoreDiv = document.getElementById("final-score");
 const score = document.getElementById("score");
 const gameScore = localStorage.getItem('finalScore');
 score.innerText = gameScore;
-localStorage.key
 
-
-function endgame(){
-    items = document.getElementsByClassName("item")
-    //items.style.display ="none";
-
-    //finalscoreDiv.style.display = "block";
-
-    saveUserScore()
-}
 
 function saveUserScore(){
     // to save to local storage
