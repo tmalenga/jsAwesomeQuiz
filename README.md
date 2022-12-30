@@ -22,7 +22,7 @@ N/A
 
 ## Credits
 
-- <a href="https://www.flaticon.com/free-stickers/profile" title="profile stickers">Profile stickers created by Stickers - Flaticon</a>
+N/A
 
 ## License
 
